@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Basics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="display-1 text-center text-primary">The Grid System</h1>
+        <!-- Note: See how we separate each row and have columns as the children
+        of the row classes  -->
+        <div class="row">
+            <!-- Note: See how when you use # for sizing the columns, they have to 
+            add up to 12 since that is the max size of the row -->
+            <div class="col-2 bg-success">I AM 2 UNITS</div>
+            <div class="col-8 bg-danger">I AM 8 UNITS</div>
+            <div class="col-2 bg-success">I AM 2 UNITS</div>
+        </div>
+        <div class="row">
+            <div class="col-3 bg-info">I AM 3 UNITS</div>
+            <div class="col-6 bg-warning">I AM 6 UNITS</div>
+            <div class="col-3 bg-info">I AM 3 UNITS</div>
+        </div>
+
+        <div class="row">
+            <!-- Note: When having a row where some of the col do not have any
+            #s, the columns with numbers listed (col-8) will take up all of their
+            space first, then the remaining space is divided evenly among the col
+            without numbers -->
+            <!-- Note 2: If we have all cols to not have any #s, then they will
+            all share the same amount of space -->
+            <div class="col bg-primary">I AM AUTO SIZED</div>
+            <div class="col bg-secondary">I AM AUTO SIZED</div>
+            <div class="col-8 bg-primary">I AM AUTO SIZED</div>
+        </div>
+
+        <h2 class="display-4">Responsive Grid</h2>
+        <div class="row">
+            <!-- Note: We can indicate multiple col sizes for different breakpoints
+            to create a more responsive design -->
+
+            <!-- When Screen size is smaller than medium breakpoint, then the each
+            column/cell will automatically have its own row by itself. -->
+
+            <!-- These classes indicate that when the screen size is larger than medium
+            breakpoint but smaller than xl breakpoint, the size of the column is 6 units, 
+            so (since there are 4 cols) then we will have 2 rows of 6 unit columns -->
+
+            <!-- When the screen size is larger than xl breakpoints, then the
+            size of the column is 3 units, so (since there are 4 cols) then we can
+            fit all cells/cols into one row! -->
+            <div class="col-md-6 col-xl-3 bg-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consequatur voluptatem eligendi ducimus.
+                Expedita quia omnis, at itaque illo nemo dolorem aperiam. Rerum magnam eveniet dicta vel rem dolorem
+                voluptatem.
+            </div>
+            <div class="col-md-6 col-xl-3 bg-success">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consequatur voluptatem eligendi ducimus.
+                Expedita quia omnis, at itaque illo nemo dolorem aperiam. Rerum magnam eveniet dicta vel rem dolorem
+                voluptatem.
+            </div>
+            <div class="col-md-6 col-xl-3 bg-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consequatur voluptatem eligendi ducimus.
+                Expedita quia omnis, at itaque illo nemo dolorem aperiam. Rerum magnam eveniet dicta vel rem dolorem
+                voluptatem.
+            </div>
+            <!-- Note: If you just list 1 size, it is assumed that above the breakpoint
+            that all the cols will be able to fit on 1 line, but with multiple sizes,
+            we can add more responsive cells to t -->
+            <div class="col-md-6 col-xl-3 bg-success">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consequatur voluptatem eligendi ducimus.
+                Expedita quia omnis, at itaque illo nemo dolorem aperiam. Rerum magnam eveniet dicta vel rem dolorem
+                voluptatem.
+            </div>
+        </div>
+        <h2>Grid Alignment</h2>
+        <!-- This grid alignment tells the uneven height cells to center itself based on
+        a line within the container where the middle of each cell has to be on this line -->
+        <div class="row align-items-center">
+            <div class="col-3 bg-danger">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quos quam minus recusandae nisi culpa,
+                in eius beatae quae blanditiis aliquam. Eum cumque ut atque fuga dolorem fugiat est suscipit.
+            </div>
+            <div class="col-3 bg-warning">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quos quam minus recusandae nisi culpa,
+                in eius beatae quae blanditiis aliquam. Eum cumque ut atque fuga dolorem fugiat est suscipit. Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit. Nisi quidem adipisci deleniti voluptatum sapiente
+                autem, veniam nostrum ipsum voluptatibus, voluptas non soluta accusantium amet suscipit, sint veritatis
+                dolorum commodi asperiores!Minima, id, a doloremque corporis qui non laborum reiciendis, at
+                necessitatibus harum dolorem tenetur quos nesciunt ratione aliquam aperiam beatae dolor nam. Iste
+                similique sequi vitae nesciunt cumque! Distinctio, assumenda?
+            </div>
+            <div class="col-3 bg-success">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quos quam minus recusandae nisi culpa,
+                in eius beatae quae blanditiis aliquam. Eum cumque ut atque fuga dolorem fugiat est suscipit. Lorem
+                ipsum dolor sit amet consectetur adipisicing elit. Similique, blanditiis nisi fugiat vel unde ratione
+                aliquam incidunt provident sit, voluptates excepturi aspernatur aliquid ullam eaque eum nobis hic,
+                delectus corporis!
+            </div>
+            <!-- We can change the alignment of one specific column as well using align-self-(val)
+            and this supercedes the original align-items add-on. Note that the alignment is based
+            on the size and current space of its container (row) -->
+            <div class="col-3 bg-info align-self-end">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quos quam minus recusandae nisi culpa,
+                in eius beatae quae blanditiis aliquam. Eum cumque ut atque fuga dolorem fugiat est suscipit.
+            </div>
+        </div>
+
+
+        <h3>Justify Content</h3>
+        <!-- Justify-content-(val) is very useful in changing the horiz alignment of a
+        column within a row  -->
+        <!-- Note: See how we can create a more responsive design using different justify
+        content with size breakpoints. For example, it might be better to have the text
+        on the right of the screen on a normal comp, but on a phone, since elements might
+        be on a row by itself, it might be better to justify center instead. -->
+        <div class="row border justify-content-center justify-content-lg-start justify-content-xl-between">
+            <div class="col-md-4 bg-primary">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, vero iure provident, officia saepe
+                soluta accusantium repellat sunt repellendus fugit iste deleniti, blanditiis eveniet hic quas a ipsa
+                amet dolore?
+            </div>
+            <div class="col-md-4 bg-info">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, vero iure provident, officia saepe
+                soluta accusantium repellat sunt repellendus fugit iste deleniti, blanditiis eveniet hic quas a ipsa
+                amet dolore?
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <!-- Note: When screen size is larger than xl breakpoint, then all img take
+            up 4 units, thus having a total of 12 units and fitting on 1 row.
+            
+            When screen size is smaller than xl breakpoint but larger than md breakpoint,
+            then all imgs take up 6 units, thus forcing 1 img to be by itself on a row.
+        
+            When Screen size is smaller than md breakpoint, then each img takes up a row
+            by itself.-->
+            <div class="col-xl-4 col-md-6">
+                <!-- Img fluid class allows image to scale based on current size of
+                its containing block, so the column in this case -->
+                <img class="img-fluid"
+                    src="https://images.unsplash.com/photo-1589595363745-d842812a9db7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                    alt="">
+            </div>
+
+            <div class="col-xl-4 col-md-6">
+                <img class="img-fluid"
+                    src="https://images.unsplash.com/photo-1511692277506-3be3a7ab1686?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                    alt="">
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <img class="img-fluid"
+                    src="https://images.unsplash.com/photo-1497206365907-f5e630693df0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                    alt="">
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

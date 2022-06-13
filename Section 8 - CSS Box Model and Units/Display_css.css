@@ -1,0 +1,28 @@
+
+span {
+    background-color:  palevioletred;
+    border: 1px solid black;
+    width: 500px;
+    /* Note: See how vertical padding and margin is ignored bc span is an inline
+    element, so all vertical attr are not respected */
+    padding: 50px;
+    margin: 50px;
+}
+h1 {
+    background-color:  paleturquoise;
+    border: 1px solid black;
+    /* Note: See how vertical padding, margin, and height is not ignored bc h1 is a block
+    element, so all vertical attr are respected */
+    width: 300px;
+    padding: 50px;
+    margin: 100px;
+}
+
+div {
+    height: 200px;
+    width: 200px;
+    background-color: olivedrab;
+    border: 5px solid black;
+    display: inline-block;
+    margin: 50px;
+}

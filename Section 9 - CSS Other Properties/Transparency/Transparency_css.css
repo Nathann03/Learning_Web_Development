@@ -1,0 +1,22 @@
+section {
+    width: 500px;
+    height: 500px;
+    background-color: magenta;
+}
+
+#rgba {
+    width: 50%;
+    height: 50%;
+    /* Note: See how the alpha value changes the opacity
+    of the background color property */
+    background-color: rgba(255,255,255,0.7);
+}
+
+#opacity {
+    width: 50%;
+    height: 50%;
+    background-color: yellow;
+    /* Note: See how opacity effects everything in the element including
+    text and background color and text color, unlike alpha channel */
+    opacity: 0.5;
+}

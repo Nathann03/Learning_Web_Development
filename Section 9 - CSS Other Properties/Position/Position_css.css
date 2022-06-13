@@ -1,0 +1,75 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #3d405b;
+    border: 2px solid black;
+    margin: 10px;
+    display: inline-block;
+}
+
+section {
+    height: 350px;
+}
+
+#middle {
+    background-color: #81b29a;
+}
+
+#static #middle {
+    position: static;
+    /* Note: Since the position is static, the top element does not move the 
+    contents down 100px as directed. */
+    top: 100px;
+}
+
+#relative #middle { 
+    position: relative;
+    /* Note: See how the changes to the position of the element is based on where 
+    the element would be without any changes. Therefore, its translations move 
+    the element on its "original" position. */
+    top: 100px;
+    left: 100px;
+}
+
+#absolute {
+    /* Note: Since we have set its closest ancestor to have a position type,
+    this causes the absolute position element below to have an ancestor to refer
+    to instead of the initial containing block, so it returns back to the absolute
+    <section>, which refers to the top left of that element. */
+    position: relative;
+}
+
+#absolute #middle {
+    /* Note: Looking at the divs, it looks like we are missing the right blue div, but
+    in reality, the green div is floating on top of the blue div since the 
+    middle green div is "wrapped" in front of text. */
+    position: absolute;
+    /* Note 2: When translated, this causes the absolute position to refer to its
+    initial containing block (the <body>) and is translated relative to the top
+    right of the document. */
+    top: 1px;
+    left: 1px;
+}
+
+#fixed #middle {
+    /* Note: When element is fixed, the element is fixed to the screen instead of the page
+    so it would be useful in cases of having a menu follow the page */
+    position: fixed;
+    /* Note 2: When translated, the original position refer to its
+    initial containing block (the <body>) and is translated relative to the top
+    right of the document.*/
+    top: 0px;
+    left: 0px;
+}
+
+#sticky #middle {
+    /* Note: When element is sticky, the element has a location in the text, but
+    when the location is no longer in view of the page, the element follows the page
+    and leaves it original position behind. However, it will be stopped by the next
+    element (ex. <p>) when it hits it since it technically is still on the page. */
+    position: sticky;
+    /* Note 2: The sticky property must be accompanied by a translation, or else it
+    will not work! */
+    top: 0px;
+    left: 0px;
+}

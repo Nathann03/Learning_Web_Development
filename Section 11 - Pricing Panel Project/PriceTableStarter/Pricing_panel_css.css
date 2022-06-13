@@ -1,0 +1,221 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Note: See how you work on how you want a section to look from big to small details.
+It is kinda like painting as you start on the background and keep layering on
+new elements to make it look like what you are imagining */
+
+html {
+    /* Remember: Box sizing ensures that the overall width/height (includes padding) 
+    will be equal to the original width set for ele */
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    /* Sets the background color of the entire page */
+    background-color: #60a9ff;
+    display: flex;
+    /* Aligns all of its text/content to center on both axises */
+    justify-content: center;
+    align-items: center;
+    /* Note: vh = viewport height, so 100vh = 100 percent of the viewport height */
+    min-height: 100vh;
+}
+
+.panel {
+    /* Sets background color of the panel */
+    background-color: white;
+    /* Curves edges of panel */
+    border-radius: 10px;
+    /* Adjusts the size of the whitespace around the text, so it doesn't
+    feel so cramped  */
+    padding: 15px 25px;
+    /* Adjusts the width of the panel to fit the screen and how much of the screen
+    it should fit maximum */
+    width: 100%;
+    max-width: 960px;
+    /* Uses flexbox to adjust the content within the panel to be centered and text
+    to be uppercased. Also, it makes sure that the panel is a column instead in a 
+    row  */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Sets the border between each "plan" using a greyish line */
+.pricing-plan {
+    border-bottom: 1px solid #e1f1ff;
+}
+
+/* Ensures that the border that is supposed to be at the bottom of the last plan
+is removed since it looks wierd with it. */
+.pricing-plan:last-child {
+    border-bottom: none;
+}
+
+/* Adds some space between the text below and the image */
+.pricing-img {
+    margin-bottom: 25px;
+    max-width: 100%;
+}
+
+/* Changes the text color, boldness, and spacing b/n each letter on the 
+main header of each group */
+.pricing-header {
+    color: #888;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Changes the color of the main descriptors of each plan and puts a lot of space
+between it and the header */
+.pricing-features {
+    margin: 50px 0 25px;
+    color: #016ff9
+}
+
+/* Affects the main decriptors of each plan */
+.pricing-features-item {
+    /* Changes the boldness, font-size, and spacing b/n each letter. */
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 12px;
+    /* Changes the spacing on each line to be 1.5x */
+    line-height: 1.5;
+    /* Adds some space on the top and bottom to make the features of each plan look
+    less crampled */
+    padding: 15px 0;
+    /* Adds a line on the top of each feature to separate each one and make
+    it look asthetically pleasing */
+    border-top: 1px solid #e1f1ff;
+}
+
+/* Adds a bottom border to the last feature to close off the feature list */
+.pricing-features-item:last-child {
+    border-bottom: 1px solid #e1f1ff;
+}
+
+/* Affects the price listed on each plan */
+.pricing-price {
+    /* Changes color of the text */
+    color: #016ff9;
+    /* Makes the price a block level element, thus making it have its own line */
+    display: block;
+    /* Changes size and boldness of price text */
+    font-size: 32px;
+    font-weight: 300;
+}
+
+/* Affects the signup text and makes it a button*/
+.pricing-button {
+    /* Creates a border surrounding the signup text. It is the frame of the "button" */
+    border: 1px solid #9ed1ff;
+    /* Rounds the edges of the sign up button border and changes the text color */
+    border-radius: 10px;
+    color: #348efe;
+    /* Makes it a block level element, so entire line by itself, but has the 
+    properties of an inline element, so height and width are not ignored */
+    display: inline-block;
+    /* Add space between the border and the text, so it is not cramped */
+    padding: 15px 35px;
+    text-decoration: none;
+    /* Adds space between the button and the bottom of the plan and the text above 
+    (price) */
+    margin: 25px 0;
+    /* Creates a smooth transition when the button is hovered over. */
+    transition: background-color 200ms ease-in-out;
+}
+
+/* Changes background color of the button when it is hovered on or clicked on */
+.pricing-button:hover, .pricing-button:focus {
+    background-color: #e1f1ff;
+}
+
+/* Changes the featured/accent pricing button. Changes background color to deep
+blue for accent and makes text white */
+.pricing-button.is-featured {
+    background-color: #48aaff;
+    color: white;
+}
+
+/* Changes the background adn text color of the accent button when hovered on
+or clicked on */
+.pricing-button.is-featured:hover, .pricing-button.is-featured:focus {
+    background-color: #269aff;
+    color: white;
+}
+
+/* Note: Since we built this website based on what a phone screen should see,
+we use this (@media) to accomodate for other screen sizes that are larger in width. */
+@media (min-width: 900px) {
+    /* Changes the panel from column to row when viewing window has a screen size
+    of 900px or larger */
+    .panel {
+        flex-direction: row;
+    }
+    
+    .pricing-plan {
+        /* Since we had a bottom border for the column layout, we need to get rid of
+        it since it does not make any sense to keep it. */
+        border-bottom: none;
+        /* Instead of a bottom border, we add a right border to separate each
+        pricing plan/ */
+        border-right: 1px solid #e1f1ff;
+        /* Adds space horizontally between each pricing plan in the row */
+        padding: 25px 50px
+    }
+
+    .pricing-plan:last-child {
+        /* Gets rid of the border-right border that we add for all plans since it does
+        not makes sense visually for it and does not fit our layout. */
+        border-right: none;
+    }
+}

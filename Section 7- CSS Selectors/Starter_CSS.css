@@ -1,0 +1,138 @@
+/* Note: See how the * (Univ. Selec) makes it change all elements
+on the page. Think of RegEx when seeing * selector */
+/* * {
+    background-color: cyan;
+} */
+
+body {
+    background-color: #f1faee;
+}
+
+button {
+    font-size: 30px;
+    background-color: magenta;
+}
+
+/* Note: See how using a comma to chain together multiple selectors
+allows you to impact multiple selectors with same properties */
+h1,h2 {
+    color: #1d3557;
+}
+
+/* Note: See how we can single out one element using #idname
+to override any global element changes like "button" */
+
+/* Note 2: Only 1 element should ever have that id name, so it 
+is easy to single out using this, if not, it is imposs
+to use this */
+
+/* Note 3: Since we used an ID selector, this has the highest
+specificity; thus, this is the reason why the sign up button
+does not change colors according to .post button:hover (Line 123) */
+#signup {
+    background-color: #1d3557;
+    color: #f1faee;
+}
+
+span {
+    color: #457b9d;
+}
+
+.tag {
+    background-color: #e63946;
+    color: #f1faee;
+    font-size: 16px;
+}
+
+/* Note: See how we can use descendant selectors with other
+selectors that we used above. */
+.post a {
+    color: #457b9d;
+    font-family: 700;
+    text-decoration: none;
+}
+
+footer a {
+    color: #e63946;
+}
+
+/* Note: Looking at the HTML, the vote buttons in directly adjacent
+to <h2>, so those buttons are the only buttons to be changed bc other
+buttons are not adjacent to an <h2> */
+
+h2 + button {
+    font-size: 20px;
+    background-color: magenta;
+}
+
+/* Note: Looking at the HTML, the License anchor tag <a> is a direct 
+child of the <footer>, thus is being impacted by this Direct Child Selector */
+footer > a {
+    color: #8adadc
+}
+
+input[type="password"] {
+    color: greenyellow;
+}
+
+/* section[class="post"] {
+    background-color: purple;
+} */
+
+/* Note: The use of the "*=" (Which is RegEx) allows for more fuzzy search
+for specific attributes like the specific hyperlink of "www.google.com", so
+it searches all href's with google in its name. However, it might just be
+easier to use class or id selectors instead of this.  */
+a[href*="google"] {
+    color: #1d3557;
+}
+
+
+.post a:hover {
+    text-decoration: underline;
+}
+
+.post button:active {
+    background-color: #02c39a;
+}
+
+/* Note: See how nth-of-type is being used and its effects on the page. */
+.post:nth-of-type(2n){
+    background-color: #dfe8dc;
+}
+
+h2::first-letter {
+    font-size: 50px
+}
+
+p::first-line {
+    color: purple
+}
+
+p::selection {
+    background-color: #fcbf49;
+}
+/* Note: See how this h1,h2 has higher prio than the one in the beginning
+since it is later in the lines bc comp interprets line by line. */
+/* h1,h2 {
+    color: yellow;
+} */
+
+/* Since this selector is more specific bc of its ".post", it overrides the other
+button:hover since it is not as specific */
+.post button:hover {
+    background-color: #e63946;
+    color: #f1faee
+}
+
+/* Note: See how the Background color is not applying, but the fontsize is.
+This is bc of specificity and its conflict with its other button hover selector. */
+button:hover {
+    background-color: olive;
+    font-size: 10px;
+}
+/* Note: !important ensures that magenta will be the background color of all buttons,
+but at the cost of breaking the cascade and specificity rules */
+/* button {
+    background-color: magenta !important;
+} */

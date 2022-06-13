@@ -1,0 +1,28 @@
+h1 {
+    /* Note: Despite h1 being right aligned, the width only constricts the free
+    space that h1 has, so 50% makes it seem like its text alignment is actually
+    center instead of right */
+    /* text-align: right;
+    width: 50%; */
+    text-align: center;
+    font-weight: 400;
+    text-decoration: blue underline wavy;
+    letter-spacing: 10px;
+    font-size: 80px;
+    /* Note: See how Macs dont have Segoe font, so it choose to use Futura instead
+    and doesn't use Arial either since Futura is higher is higher prio. */
+    font-family: Segoe UI, Futura, Arial, sans-serif;
+}
+
+a {
+    /* Note: See how setting no text decoration for an already by default text decorated 
+    anchor tag allows us to get rid of the text decoration*/
+    text-decoration: none;
+}
+
+p {
+    text-align: center;
+    line-height: 2;
+}
+
+

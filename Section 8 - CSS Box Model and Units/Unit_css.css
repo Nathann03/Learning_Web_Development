@@ -1,0 +1,97 @@
+
+#percentages section {
+    background-color: #6d6875;
+    width: 400px;
+    height: 800px;
+}
+
+#percentages div {
+    background-color: #e5989b ;
+    
+    /* Note: Divs base their relative units on the parent of the div, so
+    the width and height is based off of the <section> parent elemebt */
+   
+    width: 70%;
+    height: 20%;
+}
+
+#ems h1 {
+    font-size: 40px;
+    border: 1px solid black;
+    /* Note: h1s base their relative units of the font-size of the element,
+    so line-height is based off of 200% of 40px (font-size) */
+    line-height: 200%;
+}
+
+
+#ems p{
+    /* Note: font-size's base their relative units of the font-size of the parent(article ele),
+    so font-size is based off of 1x (1em) of 30px (font-size) */
+    font-size: 1em;
+}
+
+#ems h2 {
+    /* Note: Since font-size are based on their parent, this font-size is based off of the
+    article parent element, which is listed as 30 px, so this font size 2x (2em) is 
+    60px */
+    font-size: 2em;
+    /* Note: Margins are based off it own properties to determine relative size, so
+    since we have an font-size of 2em (Which is based on parent and det. to be
+    60px) then the margin will be 60px */
+    margin-left: 1em;
+}
+
+#ems h3 {
+    font-size: 1.5em;
+}
+
+#ems article {
+    font-size: 15px;
+}
+
+#ems {
+    font-size: 15px;
+}
+
+button {
+    /* Note: Since border radius changes based on how large we make the padding and font size
+    using absolute units, it is tedious to have to continually change the vals. However,
+    if we use ems to make each property chain together based on multiplicity, it is easier
+    to make the values/rounding stay the same no matter the size. */
+    
+    /* Note 2: font-size is based on parent still (<article>) */
+    font-size: 1em;
+    padding: 0 1em;
+    border-radius: .5em;
+    background-color: #2a9d8f;
+    color: white;
+}
+
+#ems ul {
+    /* Note: Since font-size is based on parent, we cannot use em's since all nested
+    <ul> elements are parents of each other, so the deepest <li> will have its font-size 
+    multiplied for every layer deeper */
+    font-size: 1.5em;
+}
+
+html {
+    font-size: 10px;
+}
+/* Note: The root element is the <html> element, so whenever you use rems,
+then it will refer to <html> font size to base its size */
+#rems h2{
+    font-size: 3rem;
+}
+#rems h3{
+    font-size: 2rem;
+}
+
+/* Note: See how rems ensure that the ul is uniform no matter how 
+far nested the element/text is. */
+#rems ul{
+    font-size: 1.5rem;
+}
+
+#rems button{
+    font-size: 1.5rem;
+}

@@ -1,0 +1,85 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    text-align: center;
+}
+#container {
+    background-color: #003049;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    /* Required to use flexbox properties */
+    display: flex;
+    
+    /* Changes what axis is the main axis (Vertical or Horiz) and what direction
+    the axis is going */
+    flex-direction: row;
+    
+    /* Changes the spacing between columns or rows (depends on what is main axis) and 
+    how they are grouped */
+    justify-content: center;
+    
+    /* Changes the spacing between the elements on the cross axis */
+    /* align-items: flex-end; */
+
+    /* Changes the spacing between columns or rows (depends on what is cross axis) and 
+    how they are grouped */
+    /* align-content: flex-start; */
+    
+    /* Determines if elements will be squished on one column/row or will create new ones
+    to accomidate required height and width */
+    /* flex-wrap: wrap; */
+
+}
+
+#container div {
+    width: 800px;
+    height: 200px;
+    text-align: center;
+    flex-basis: 800px;
+}
+
+/* div:nth-of-type(3) {
+    align-self: flex-end;
+}
+div:nth-of-type(2) {
+    align-self: center;
+} */
+
+/* Note: Looks wierd, but imagine if you shifted everything to flex-start, and took note
+of the position of where each block would end up and select what block would start flex-start
+and what would be reverted */
+/* div:nth-of-type(5) {
+    align-self: flex-start; 
+} */
+
+div:nth-of-type(1) {
+    flex-shrink: 3;
+}
+div:nth-of-type(5) {
+    flex-shrink: 2;
+}
+
+main {
+    width: 80%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid black;
+    display: flex;
+}
+
+main .sidebar {
+    background-color: #6930c3;
+    border: 2px solid white;
+    /* Order: Grow | Shrink | Flex-basis */
+    /* Note: Notice how when you resize the screen to be smaller that the
+    sidebars are getting smaller at a higher rate than the main content piece */
+    flex: 1 2 300px;
+}
+
+main .maincontent {
+    background-color: #80ffdb;
+    flex: 2 800px;
+}

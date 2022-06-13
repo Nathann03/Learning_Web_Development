@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Basics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="Basics_css.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="display-1 text-center text-primary">Bootstrap Playground</h1>
+        <h2 class="display-4">Buttons <span class="badge rounded-pill badge-success">New</span> </h2>
+        <!-- Different button types in Bootstrap -->
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button class="btn btn-outline-warning">Warning Outline</button>
+        <button class="btn btn-outline-danger">Danger Outline</button>
+        <button class="btn btn-outline-info btn-lg">Large Info Outline</button>
+        <button class="btn btn-secondary btn-sm">Small Secondary</button>
+        <!-- "Disabled" makes the button unclickable anymore and renders it useless -->
+        <button class="btn btn-success" disabled>Success Disabled</button>
+        <!-- Badge Icon for notifcations. -->
+        <button class="btn-primary">Updates <span class="badge badge-light">8</span></button>
+        <h3>Button groups</h3>
+        <!-- Using btn-group class to link together buttons into one three button
+        selector/radio button class -->
+        <div class="btn-group">
+            <button class="btn btn-warning">One</button>
+            <button class="btn btn-warning">Two</button>
+            <button class="btn btn-warning">Three</button>
+        </div>
+
+        <h3>Alerts</h3>
+        <!-- "alert-dismissible fade show" ensures that there is a transition
+        when dismissing the alert -->
+        <div class="alert alert-danger alert-dismissible fade show">
+            <!-- Alert class. Note: the alert class is the "alert alert-danger" above
+            but below is how it is structured using an alert heading within it. -->
+            <h4 class="alert-heading">Oh No!</h4>
+            Danger! You are about to end the world as you know it!
+            <!-- Dismiss button for the alert. Note: Aria labels are for documentation
+            and accessability purposes -->
+            <button aria-label="Close" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <h2 class="display-4">Typography stuff</h2>
+        <!-- "Lead" class makes the paragraph pop out and makes it a statement
+        piece on the website -->
+        <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, fugit. Beatae vel doloribus sint
+            fuga
+            laboriosam,
+            hic autem praesentium ipsum, cum pariatur voluptates eum quibusdam, blanditiis officiis eius! Maiores, sunt!
+            Quisquam amet dolor, ullam quaerat ea dolore soluta doloremque tenetur quam deleniti molestiae veniam
+            perferendis aut dignissimos nam sit quibusdam in! Similique adipisci, eaque magni dicta ad at veniam vero!
+        </p>
+        <!-- Blockquotes from bootstrap and how they are aligned -->
+        <blockquote class="blockquote text-right">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat doloribus, magnam error nihil illo
+                autem, incidunt repellendus reprehenderit, ullam in unde necessitatibus culpa laborum rerum minus
+                suscipit id exercitationem! Quaerat?
+            </p>
+            <!-- Attribution for blockquote class -->
+            <footer class="blockquote-footer">Mr. Lorem Ipsum</footer>
+        </blockquote>
+    </div>
+    <!-- Ensures that all buttons function correctly -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+section {
+    width: 80%;
+    height: 800px;
+    /* background-image: url("https://images.unsplash.com/photo-1564442038901-4f9a19d3d456?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1227&q=80");
+    background-size: cover;
+    background-position: top; */
+
+    /* Note: See how background size must be after position in {background} and how we can
+    put in two different backgrounds using an "," */
+    background: center/40% no-repeat url("https://images.unsplash.com/photo-1564442038901-4f9a19d3d456?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1227&q=80"), blueviolet ;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 150px;
+    color:white;
+}
